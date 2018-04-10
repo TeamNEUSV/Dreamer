@@ -1,10 +1,10 @@
 export class Event {
-  _id: String;
-  name: String;
+  _id: string;
+  name: string;
   date: Date;
-  place: String;
-  attendees: String[];
-  url: String;
+  place: string;
+  attendees: string[];
+  url: string;
   constructor(_id, name, date, place, attendees, url) {
     this._id = _id;
     this.name = name;

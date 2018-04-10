@@ -11,16 +11,16 @@ import {Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   user: User;
-  userId: String;
-  username: String;
-  email: String;
-  currentpassword: String;
-  newpassword: String;
-  confirmpassword: String;
-  firstName: String;
-  lastName: String;
+  userId: string;
+  username: string;
+  email: string;
+  currentpassword: string;
+  newpassword: string;
+  confirmpassword: string;
+  firstName: string;
+  lastName: string;
   errorFlag: Boolean;
-  errorMsg: String;
+  errorMsg: string;
 
   constructor(private userService: UserService,
               private activatedroute: ActivatedRoute,

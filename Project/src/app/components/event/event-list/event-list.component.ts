@@ -34,18 +34,18 @@ export class EventListComponent implements OnInit {
       this.eventService.findSavedEventsByUser(this.userId)
         .subscribe(res => {
           console.log(res);
-          this.savedevents = res;
+          this.savedevents = this.savedevents.concat(res);
         });
       this.eventService.findPastEventsByUser(this.userId).subscribe( res => {
-        this.pastevents = res;
-      })
+        this.pastevents = this.pastevents.concat(res);
+      });
       this.eventService.findGoingEventsByUser(this.userId).subscribe(res => {
         console.log(res);
-        this.goingevents = res;
+        this.goingevents = this.goingevents.concat(res);
       });
         this.eventService.findPostEventsByUser(this.userId).subscribe(res => {
           console.log(res);
-          this.postevents = res;
+          this.postevents = this.postevents.concat(res);
         });
   });
   }
