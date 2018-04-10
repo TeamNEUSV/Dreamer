@@ -1,0 +1,87 @@
+<div class="font-lato">
+  <nav class="navbar navbar-default navbar-fixed-top header">
+    <div class="container-fluid ">
+      <div class="navbar-header">
+        <a routerLink="" class="navbar-brand weaver-size">
+          <img class = "pull-left" id="logo" src="../../../../assets/images/logo.png">Weaver</a>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/event" class = "glyphicon glyphicon-search search-icon"></a></li>
+        <li><input type = "text"
+                   name = "search"
+                   placeholder=" search event . . . "
+                   class="search-text"></li>
+        <li><a (click)="toNewEvent()">Create Event <i class="fas fa-plus"></i></a></li>
+        <li><a (click)="toProfile()">Profile <i class="fa fa-user-circle"></i></a></li>
+        <li><a routerLink="/login">Logout  <i class="fa fa-user"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="topspace">
+    <header class = "whitetext">
+      <div class = "row">
+        <div class="col-xs-1">
+          <a routerLink='/user/:uid/website'>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+        </div>
+        <div class="col-xs-6" >
+          <span style="font-size: 25pt">Attendees</span>
+        </div>
+      </div>
+    </header>
+    <hr />
+
+
+    <div class = "container-fluid">
+
+      <ul class = "list-group">
+
+        <li class = "list-group-item">
+          <div class = "row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-6" style="font-size: 20px">
+              <a routerLink = '/user/:uid'>Xing Du</a>
+            </div>
+          </div>
+        </li>
+
+        <li class = "list-group-item">
+          <div class = "row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-6" style="font-size: 20px">
+              <a routerLink = '/user/:uid/website/att/:pid'>Haolin Li</a>
+            </div>
+          </div>
+        </li>
+
+        <li class = "list-group-item">
+          <div class = "row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-6" style="font-size: 20px">
+              <a routerLink = '/user/:uid/website/att/:pid'>Qi Zhang</a>
+            </div>
+          </div>
+        </li>
+
+        <li class = "list-group-item">
+          <div class = "row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-6" style="font-size: 20px">
+              <a routerLink = '/user/:uid/website/att/:pid'>Jin Niu</a>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+<footer class = "blue">
+  <a routerLink = '/user/:uid'>
+    <span class="glyphicon glyphicon-user"></span>
+  </a>
+</footer>

@@ -1,0 +1,254 @@
+<div class="font-lato">
+<nav class="navbar navbar-default navbar-fixed-top header">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <a routerLink="" class="navbar-brand weaver-size">
+        <img class = "pull-left" id="logo" src="../../../../assets/images/logo.png">Weaver</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a routerLink="/event" class = "glyphicon glyphicon-search search-icon"></a></li>
+      <li><input type = "text"
+                 name = "search"
+                 placeholder=" search event . . . "
+                 class="search-text"></li>
+      <li><a (click)="toNewEvent()">Create Event <i class="fas fa-plus"></i></a></li>
+      <li><a (click)="toProfile()">Profile <i class="fa fa-user-circle"></i></a></li>
+      <li><a routerLink="/login">Logout  <i class="fa fa-user"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="topspace">
+  <div class = "container">
+    <h2>Explore Events </h2>
+
+    <ul id="myTab" class="nav nav-tabs">
+      <li class="active"><a data-toggle="tab" href = "#live">Live Event</a></li>
+      <li><a data-toggle="tab" href = "#post">Post Events</a></li>
+      <li><a data-toggle="tab" href = "#saved">Saved Events</a></li>
+      <li><a data-toggle="tab" href = "#past">Past Events</a></li>
+      <li><a data-toggle="tab" href = "#going">Going Events</a></li>
+    </ul>
+    <br>
+
+     <!--show live events-->
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade in active" id="live">
+
+        <ul class = "list-group">
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-6" style="font-size: 15pt">
+                <span> March 2018</span>
+              </div>
+            </div>
+          </li>
+
+          <li class = "list-group-item">
+            <div class = "row">
+
+              <div class="col-xs-1">
+                <a (click)="toAttendees()">
+                  Attendees
+                </a>
+              </div>
+
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href="https://www.eventbrite.com/e/women-who-empower-our-world-tickets-43039762087">
+        Women who empower our world</a>
+    </span>
+              </div>
+
+              <div class="col-xs-2">
+                <span>Thu, March 8, 2018 6:00 PM – 9:00 PM PST</span>
+              </div>
+
+              <div class="col-xs-2">
+                <span>BELLEVUE ROOM AT THE MARKER, 501 GEARY STREET, SAN FRANCISCO, CA 94102</span>
+              </div>
+
+              <div class="col-xs-1">
+                <a routerLink="">
+                  <span>Share</span>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1">
+                <a routerLink='/user/:uid/website/att'>
+                  Attendees
+                </a>
+              </div>
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href="https://www.eventbrite.com/e/webinar-putting-your-life-science-degree-to-work-ii-tickets-43408427776?aff=erelpanelorg">
+      Webinar: Putting Your Life Science Degree to Work (II)</a>
+    </span>
+              </div>
+              <div class="col-xs-2">
+        <span>Thu, March 22, 2018
+          3:00 PM – 4:00 PM PDT</span>
+              </div>
+
+              <div class="col-xs-2">
+                <span>Online</span>
+              </div>
+
+              <div class="col-xs-1">
+                <a routerLink="">
+                  <span>Share</span>
+                </a>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <div class="tab-pane fade" id="post">
+        <ul *ngFor="let postevent of postevents" class = "list-group">
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1">
+                <a (click)="toAttendees(postevent._id)">
+                  Attendees
+                </a>
+              </div>
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href= {{postevent.url}}>
+        {{postevent.name}}</a>
+    </span>
+              </div>
+              <div class="col-xs-2">
+                <span> {{postevent.date}}</span>
+              </div>
+              <div class="col-xs-2">
+                <span>{{postevent.place}}</span>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <!--show saved events-->
+      <div class="tab-pane fade" id="saved">
+        <ul *ngFor="let savedevent of savedevents" class = "list-group">
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1">
+                <a (click)="toAttendees(savedevent._id)">
+                  Attendees
+                </a>
+              </div>
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href= {{savedevent.url}}>
+        {{savedevent.name}}</a>
+    </span>
+              </div>
+              <div class="col-xs-2">
+                <span> {{savedevent.date}}</span>
+              </div>
+              <div class="col-xs-2">
+                <span>{{savedevent.place}}</span>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <!--show past events-->
+      <div class="tab-pane fade" id="past">
+        <ul *ngFor="let pastevent of pastevents"class = "list-group">
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1"></div>
+              <div class="col-xs-6" style="font-size: 15pt">
+                <span> Feb 2018</span>
+              </div>
+            </div>
+          </li>
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1">
+                <a routerLink='/user/:uid/website/att'>
+                  Attendees
+                </a>
+              </div>
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href="https://www.eventbrite.com/e/career-techup-series-big-data-workshop-tickets-41968869017#">
+        Career TechUP Series: Big Data Workshop</a>
+    </span>
+              </div>
+              <div class="col-xs-2">
+                <span>Saturday, February 3, 2018 from 10:30 AM to 2:30 PM (PST)</span>
+              </div>
+              <div class="col-xs-2">
+                <span>6024 Silver Creek Valley Road, San Jose, CA 95138</span>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+      <!--show going events-->
+      <div class="tab-pane fade" id="going">
+        <ul *ngFor="let goingevent of goingevents" class = "list-group">
+
+          <li class = "list-group-item">
+            <div class = "row">
+              <div class="col-xs-1">
+                <a (click)="toAttendees(goingevent._id)">
+                  Attendees
+                </a>
+              </div>
+              <div class="col-xs-6" style="font-size: 15pt">
+    <span>
+      <a target="_blank" rel="noopener"
+         href= {{goingevent.url}}>
+        {{goingevent.name}}</a>
+    </span>
+              </div>
+              <div class="col-xs-2">
+                <span> {{goingevent.date}}</span>
+              </div>
+              <div class="col-xs-2">
+                <span>{{goingevent.place}}</span>
+              </div>
+
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+</div>

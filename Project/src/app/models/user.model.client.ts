@@ -1,13 +1,15 @@
 export class User {
-  _id: String;
-  username: String;
-  email: String;
-  password: String;
-  firstName: String;
-  lastName: String;
-  savedevents: String[];
-  goingevents: String[];
-  constructor(_id, username, email, password, firstName, lastName, savedevents, goingevents) {
+  _id: string;
+  username: string;
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  postevents: string[];
+  savedevents: string[];
+  pastevents: string[];
+  goingevents: string[];
+  constructor(_id, username, email, password, firstName, lastName, postevents, savedevents, pastevents, goingevents) {
     this._id = _id;
     this.username = username;
     this.email = email;
@@ -16,5 +18,6 @@ export class User {
     this.lastName = lastName;
     this.savedevents = savedevents;
     this.goingevents = goingevents;
+    this.postevents = postevents;
   }
 }
