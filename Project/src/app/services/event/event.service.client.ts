@@ -24,7 +24,6 @@ export class EventService {
 
   events: Event[] = events;
   api = {
-    'findPastEventsByUser': this.findPastEventsByUser,
     'findSavedEventssByUser': this.findSavedEventsByUser,
     'findGoingEventsByUser': this.findGoingEventsByUser,
     'findPostEventsByUser' : this.findPostEventsByUser,
@@ -39,14 +38,9 @@ export class EventService {
     const list: string[] = user.savedevents;
     return from(this.events).pipe(filter(event => list.indexOf(event._id) > -1));
   }
-  findPastEventsByUser(userId: string) {
-    const user: User = this.userService.findUserById(userId);
-    const list: string[] = user.goingevents;
-    return from(this.events).pipe(filter(event => list.indexOf(event._id) > -1));
-  }
   findGoingEventsByUser(userId: string) {
     const user: User = this.userService.findUserById(userId);
-    const list: string[] = user.pastevents;
+    const list: string[] = user.goingevents;
     return from(this.events).pipe(filter(event => list.indexOf(event._id) > -1));
   }
 }

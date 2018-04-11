@@ -7,9 +7,8 @@ export class User {
   lastName: string;
   postevents: string[];
   savedevents: string[];
-  pastevents: string[];
   goingevents: string[];
-  constructor(_id, username, email, password, firstName, lastName, postevents, savedevents, pastevents, goingevents) {
+  constructor(_id, username, email, password, firstName, lastName, postevents, savedevents, goingevents) {
     this._id = _id;
     this.username = username;
     this.email = email;

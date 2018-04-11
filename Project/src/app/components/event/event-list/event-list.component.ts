@@ -5,6 +5,7 @@ import {User} from '../../../models/user.model.client';
 import {Event} from '../../../models/event.model.client';
 import {UserService} from '../../../services/user/user.service.client';
 import {Router} from '@angular/router';
+import {events} from '../../../services/event/event.mock.client';
 
 @Component({
   selector: 'app-event-list',
@@ -14,6 +15,7 @@ import {Router} from '@angular/router';
 export class EventListComponent implements OnInit {
   userId: string;
   event: Event;
+  events: Event[] = events;
   postevents: Event[] = [];
   savedevents: Event[] = [];
   pastevents: Event[] = [];
@@ -30,15 +32,12 @@ export class EventListComponent implements OnInit {
       this.userId = params['uid'];
       this.user = this.userService.findUserById(this.userId);
       console.log('userId: ', this.user._id);
-
       this.eventService.findSavedEventsByUser(this.userId)
         .subscribe(res => {
           console.log(res);
           this.savedevents = this.savedevents.concat(res);
         });
-      this.eventService.findPastEventsByUser(this.userId).subscribe( res => {
-        this.pastevents = this.pastevents.concat(res);
-      });
+
       this.eventService.findGoingEventsByUser(this.userId).subscribe(res => {
         console.log(res);
         this.goingevents = this.goingevents.concat(res);

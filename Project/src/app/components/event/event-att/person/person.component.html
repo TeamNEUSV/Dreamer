@@ -1,6 +1,26 @@
-<header class = "blue">
-  <h1 class = "25"> Profile </h1>
-</header>
+<div class="font-lato">
+<nav class="navbar navbar-default navbar-fixed-top header">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+      <a routerLink="/user/{{userId}}/event" class="navbar-brand weaver-size">
+        <img class = "pull-left" id="logo" src="../../../../assets/images/logo.png">Weaver</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a routerLink="/event" class = "glyphicon glyphicon-search search-icon"></a></li>
+      <li><input type = "text"
+                 name = "search"
+                 placeholder=" search event . . . "
+                 class="search-text"></li>
+      <li><a (click)="toNewEvent()">Create Event <i class="fas fa-plus"></i></a></li>
+      <li><a (click)="toProfile()">Profile <i class="fa fa-user-circle"></i></a></li>
+      <li><a routerLink="/login">Logout  <i class="fa fa-user"></i></a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="topspace">
+    <hr />
+
 <div class = "container">
   <ul class = "list-group">
 
@@ -13,7 +33,7 @@
     </li>
 
     <li class = "list-group-item">
-      <span>First Name: Ted</span>
+      <span>First Name: Haolin</span>
     </li>
 
     <li class = "list-group-item">
@@ -49,27 +69,23 @@
 
     <li class = "list-group-item">
       <a href = "https://www.facebook.com/verno.chaveut">
-        <span>Twitter</span>
+        <span>Facebook</span>
       </a>
     </li>
 
   </ul>
 
   <p>
-    <a routerLink='/user/:uid/website'>
-      <input type="submit" value="Websites" class="html-text-box1">
-    </a>
-    <a routerLink='/user/:uid/website/att/:pid/:mid'>
+
+    <a routerLink='/user/:uid/event/:eid/attendee/:aid/:mid'>
       <input type="submit" value="Send message" class="html-text-box2" >
     </a>
-    <a routerLink='/user/:uid/website/att'>
+    <a routerLink='/user/{{userId}}/event/{{eventId}}/attendee'>
       <input type="submit" value="Back to list" class="html-text-box1" >
     </a>
   </p>
 
 </div>
-<footer class = "blue">
-  <a routerLink = '/user/:uid'>
-    <span class="glyphicon glyphicon-user"></span>
-  </a>
-</footer>
+
+  </div>
+</div>

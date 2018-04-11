@@ -9,3 +9,5 @@ export const events = [
     'Mar 30th, 2018', 'Santa Clara Convention Center', ['234', '345'],
     'https://tinyurl.com/y92lyovb'),
 ];
+
+// module.exports = events;
