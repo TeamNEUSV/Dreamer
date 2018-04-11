@@ -47,7 +47,7 @@ export class EventNewComponent implements OnInit {
   addEvent() {
     this.event['name'] = this.eventName;
     this.event['date'] = this.eventDate;
-
+    this.router.navigate(['/user/' + this.userId + '/event']);
   }
   toEventList() {
     this.router.navigate(['/user/' + this.userId + '/event']);
