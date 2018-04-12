@@ -9,7 +9,8 @@
 * User can browse all events, choose interested events (either save or show intension to attend) and post events
 * User can check attendees of any event, check their profile information(workplace, title, social media account) and send message.
 
-## Workflow diagram (Please check https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png)
+## Workflow diagram 
+Please check https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png
 
 ## How to run
 Make sure you have angularJS installed, git clone the repo, cd to Project folder and execute ng Serve will start the frontend.
