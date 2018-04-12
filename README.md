@@ -5,15 +5,15 @@
 
 * Social interaction: The need to connect with those who share your event experience. 
 
+![](https://www.ibm.com/events/shared/img/think/home/think-new-lead.jpg)
+
 ## Features
 * User can browse all events, choose interested events (either save or show intension to attend) and post events
 * User can check attendees of any event, check their profile information(workplace, title, social media account) and send message.
 
 ## Workflow diagram 
-Please check https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png
 
-![](http://www.affiliateignition.com/wp-content/uploads/2017/02/Advantages-of-social-networking.jpg)
-![](https://www.ibm.com/events/shared/img/think/home/think-new-lead.jpg)
+![](https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png?raw=true)
 
 ## How to run
 Make sure you have angularJS installed, git clone the repo, cd to Project folder and execute ng Serve will start the frontend.
