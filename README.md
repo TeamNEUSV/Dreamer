@@ -13,7 +13,7 @@
 Please check https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png
 
 ![](http://www.affiliateignition.com/wp-content/uploads/2017/02/Advantages-of-social-networking.jpg)
-
+![](https://www.ibm.com/events/shared/img/think/home/think-new-lead.jpg)
 
 ## How to run
 Make sure you have angularJS installed, git clone the repo, cd to Project folder and execute ng Serve will start the frontend.
