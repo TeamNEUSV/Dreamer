@@ -12,6 +12,9 @@
 ## Workflow diagram 
 Please check https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png
 
+![](http://www.affiliateignition.com/wp-content/uploads/2017/02/Advantages-of-social-networking.jpg)
+
+
 ## How to run
 Make sure you have angularJS installed, git clone the repo, cd to Project folder and execute ng Serve will start the frontend.
 The Project will be deployed onto Heroku as we progress on.
@@ -20,9 +23,9 @@ The Project will be deployed onto Heroku as we progress on.
 We took an approach that is dynamic, data driven, and interactive. Focuses on the software development issues of integrating multiple languages, assorted data technologies, and Web interaction. Considers AngularJS, Node.js, MongoDB, HTTP, HTML, CSS, JavaScript, AJAX, SQL, and RESTful Web services.
 
 ## How do we scale after launch
-Caching: As the number of events grow up, event list (the main tab) loading speed will be optimized by caching, while personalized event list will take more time to fetch from database. 
-Load balancing: We will build a network of multiple servers of same code and access to same data, some frontend parts will be thrown behind load balancer to ensuare that work load is distributed evenly by load balancer. 
-Database sharding, denormalization and NoSQL: As user number grows, we need to partition data across machines. We will also add redundant information to speed up reads or use NoSQL which is designed to scale better.
+*Caching: As the number of events grow up, event list (the main tab) loading speed will be optimized by caching, while personalized event list will take more time to fetch from database. 
+*Load balancing: We will build a network of multiple servers of same code and access to same data, some frontend parts will be thrown behind load balancer to ensuare that work load is distributed evenly by load balancer. 
+*Database sharding, denormalization and NoSQL: As user number grows, we need to partition data across machines. We will also add redundant information to speed up reads or use NoSQL which is designed to scale better.
 
 ## Members:
 
