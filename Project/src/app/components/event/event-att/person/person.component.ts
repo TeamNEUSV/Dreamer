@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EventService} from '../../../../services/event/event.service.client';
-import {UserService} from '../../../../services/user/user.service.client';
+import {EventService} from '../../../../services/event.service.client';
+import {UserService} from '../../../../services/user.service.client';
 import {User} from '../../../../models/user.model.client';
 import {Event} from '../../../../models/event.model.client';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -24,8 +24,13 @@ export class PersonComponent implements OnInit {
     this.activeRouter.params.subscribe(params => {
       this.userId = params['uid'];
       this.eventId = params['eid'];
-      this.user = this.userService.findUserById(this.userId);
-      console.log('userId: ', this.user._id);
+      // this.userService.findUserById(this.userId).subscribe(
+      //   res => {
+      //     this.user = res;
+      //   }, err => {
+      //     alert('Error!');
+      //   }
+      // );
     });
   }
 

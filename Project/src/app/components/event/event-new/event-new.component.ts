@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UserService} from '../../../services/user/user.service.client';
-import {EventService} from '../../../services/event/event.service.client';
+import {UserService} from '../../../services/user.service.client';
+import {EventService} from '../../../services/event.service.client';
 
 @Component({
   selector: 'app-event-new',
@@ -10,9 +10,10 @@ import {EventService} from '../../../services/event/event.service.client';
 })
 export class EventNewComponent implements OnInit {
   userId: string;
-  event: Event;
+  event: {};
   eventName: string;
   eventDate: Date;
+  eventPlace: string;
   constructor(private userService: UserService,
               private eventService: EventService,
               private activeRouter: ActivatedRoute,
@@ -45,8 +46,17 @@ export class EventNewComponent implements OnInit {
     }
   }
   addEvent() {
-    this.event['name'] = this.eventName;
-    this.event['date'] = this.eventDate;
+    this.event = {name: this.eventName, date: this.eventDate, location: this.eventPlace};
+    // this.event['name'] = this.eventName;
+    // this.event['date'] = this.eventDate;
+    // this.event['location'] = this.eventPlace;
+    this.eventService.createEvent(this.userId, this.event).subscribe(
+      res => {
+        this.event = res;
+      }, err => {
+        alert('Error!');
+      }
+    )
     this.router.navigate(['/user/' + this.userId + '/event']);
   }
   toEventList() {
