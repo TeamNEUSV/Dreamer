@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-xs-2">
-                  <span>{{event.place}}</span>
+                  <span>{{event.location}}</span>
                 </div>
 
                 <div class="col-xs-1">
@@ -95,7 +95,7 @@
                   <span> {{postevent.date}}</span>
                 </div>
                 <div class="col-xs-2">
-                  <span>{{postevent.place}}</span>
+                  <span>{{postevent.location}}</span>
                 </div>
 
               </div>
@@ -125,46 +125,7 @@
                   <span> {{savedevent.date}}</span>
                 </div>
                 <div class="col-xs-2">
-                  <span>{{savedevent.place}}</span>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-        </div>
-        <!--show past events-->
-        <div class="tab-pane fade" id="past">
-          <ul *ngFor="let pastevent of pastevents"class = "list-group">
-
-            <li class = "list-group-item">
-              <div class = "row">
-                <div class="col-xs-1"></div>
-                <div class="col-xs-6" style="font-size: 15pt">
-                  <span> Feb 2018</span>
-                </div>
-              </div>
-            </li>
-
-            <li class = "list-group-item">
-              <div class = "row">
-                <div class="col-xs-1">
-                  <a routerLink='/user/:uid/website/att'>
-                    Attendees
-                  </a>
-                </div>
-                <div class="col-xs-6" style="font-size: 15pt">
-    <span>
-      <a target="_blank" rel="noopener"
-         href="https://www.eventbrite.com/e/career-techup-series-big-data-workshop-tickets-41968869017#">
-        Career TechUP Series: Big Data Workshop</a>
-    </span>
-                </div>
-                <div class="col-xs-2">
-                  <span>Saturday, February 3, 2018 from 10:30 AM to 2:30 PM (PST)</span>
-                </div>
-                <div class="col-xs-2">
-                  <span>6024 Silver Creek Valley Road, San Jose, CA 95138</span>
+                  <span>{{savedevent.location}}</span>
                 </div>
 
               </div>
@@ -195,7 +156,7 @@
                   <span> {{goingevent.date}}</span>
                 </div>
                 <div class="col-xs-2">
-                  <span>{{goingevent.place}}</span>
+                  <span>{{goingevent.location}}</span>
                 </div>
 
               </div>

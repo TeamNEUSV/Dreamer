@@ -4,6 +4,8 @@ var eventModel = mongoose.model("EventModel", eventSchema);
 
 eventModel.createEventForUser = createEventForUser;
 eventModel.findPostEventsByUser = findPostEventsByUser;
+// eventModel.findGoingEventsByUser = findGoingEventsByUser;
+// eventModel.findSavedEventsByUser = findSEventsByUser;
 eventModel.findEventById = findEventById;
 eventModel.updateEvent = updateEvent;
 eventModel.deleteEvent = deleteEvent;
@@ -11,20 +13,17 @@ eventModel.deleteEvent = deleteEvent;
 module.exports = eventModel;
 
 function createEventForUser(userId, event) {
-  event['_user'] = userId;
+  event['creator'] = userId;
+  console.log('mongo' + JSON.stringify(event));
   return eventModel.create(event);
-}
-
-function findPostEventsByUser(userId) {
-  return eventModel.find({creator: userId});
-}
-
-function findGoingEventsByUser(userId) {
-  return eventModel.find({attendees: userId});
 }
 
 function findEventById(eventId) {
   return eventModel.findOne({_id:eventId});
+}
+
+function findPostEventsByUser(userId) {
+  return eventModel.find({creator: userId});
 }
 
 function updateEvent(eventId, event) {

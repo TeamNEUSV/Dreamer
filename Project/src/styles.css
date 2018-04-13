@@ -338,11 +338,15 @@ div.container-right{
   margin:10% 10% 25% 0%;
 }
 
-div.topspace {
+.topspace {
   margin-top: 50px;
 }
 
-div.topspace2{
+.topspace1 {
+  margin-top: 30px;
+}
+
+.topspace2 {
   margin-top: 100px;
 }
 
@@ -396,3 +400,10 @@ input.html-date{
   margin-top: 10px;
   margin-left: 8px;
 }
+
+input.html-location{
+  height: 45px;
+  width: 30em;
+  margin-top: 10px;
+}
+

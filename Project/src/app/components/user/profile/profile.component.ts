@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  imageUrl: String = '../../../assets/images/uploadImage.png';
   user: User;
   userId: string;
   username: string;
@@ -45,44 +46,40 @@ export class ProfileComponent implements OnInit {
     );
   }
     updateProfile() {
-      if (this.username.trim().length > 0 && this.username.indexOf(' ') >= 0) {
-             this.errorFlag = true;
-             this.errorMsg = 'The username cannot include blank space !';
-             return;
+      if (this.username) {
+        this.username = this.username.trim();
       }
-      if (this.newpassword && this.newpassword.trim().length > 0) {
-        if (this.newpassword !== this.confirmpassword) {
+      if (this.firstName) {
+        this.firstName = this.firstName.trim();
+      }
+      if (this.lastName) {
+        this.lastName = this.lastName.trim();
+      }
+      if (this.newpassword) {
+        this.newpassword = this.newpassword.trim();
+      }
+      if (this.confirmpassword) {
+        this.confirmpassword = this.confirmpassword.trim();
+      }
+      if (this.newpassword !== this.confirmpassword) {
           this.errorFlag = true;
           this.errorMsg = 'The confirm password does not match !';
           return;
-        }
-        if (this.newpassword.indexOf(' ') >= 0) {
-          this.errorFlag = true;
-          this.errorMsg = 'The password cannot include blank space !';
-          return;
-        }
-        if (this.newpassword.length < 5) {
-          this.errorFlag = true;
-          this.errorMsg = 'The password must include at least 5 character !';
-          return;
-          }
       }
-      if (this.newpassword.trim().length === 0 && this.confirmpassword.trim().length > 0) {
-        this.errorFlag = true;
-        this.errorMsg = 'Please enter the new password !';
-        return;
-        }
-        this.errorFlag = false;
-        this.user['username'] = this.username;
-        this.user['firstName'] = this.firstName;
-        this.user['lastName'] = this.lastName;
-        if (this.newpassword === this.confirmpassword && this.newpassword.length > 6) {
+      if (this.username && this.username.length > 0) {
+          this.user['username'] = this.username;
+      }
+      if (this.firstName && this.firstName.length > 0) {
+          this.user['firstName'] = this.firstName;
+      }
+      if (this.lastName && this.lastName.length > 0) {
+          this.user['lastName'] = this.lastName;
+      }
+      if (this.newpassword && this.newpassword.length > 0) {
           this.user['password'] = this.newpassword;
-        }
-        console.log('update : ' + JSON.stringify(this.user));
-        this.userService.updateUser(this.userId, this.user).subscribe();
-        console.log('user updated username: ', this.user.username);
-        console.log('user updated firstname: ', this.user.firstName);
+      }
+      this.errorFlag = false;
+      this.userService.updateUser(this.userId, this.user).subscribe();
     }
   }
 

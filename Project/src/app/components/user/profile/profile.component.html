@@ -20,7 +20,13 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="container-left">
-
+          <div class="col-lg-4">
+            <img [src]="imageUrl" style="width:100px; height:100px"> </div>
+          <div class="col-lg-2">
+          <input type="file" #Image accept="image/*" class="topspace1">
+            <br>
+            <button type="submit" class="btn-submit">Submit</button> </div>
+          <br><br><br><br><br><br>
           <label class="text-label">Username</label>
 
           <input [(ngModel)]="username"
@@ -48,17 +54,16 @@
                  type="text"
                  class="form-control"/>
 
-          <label class="text-label">Current Password</label>
-          <input [(ngModel)] = "currentpassword"
-                 placeholder="Type in previous password before change"
-                 type="password"
-                 class="form-control" disabled/>
       </div>
       </div>
 
         <div class="col-lg-6">
            <div class = "container-right">
-
+             <label class="text-label">Current Password</label>
+             <input [(ngModel)] = "currentpassword"
+                    placeholder="Type in previous password before change"
+                    type="password"
+                    class="form-control" disabled/>
              <label class="text-label">Change Password</label>
              <input [(ngModel)] = "newpassword"
                     placeholder=""

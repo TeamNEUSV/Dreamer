@@ -10,10 +10,10 @@ import {EventService} from '../../../services/event.service.client';
 })
 export class EventNewComponent implements OnInit {
   userId: string;
-  event: {};
-  eventName: string;
-  eventDate: Date;
-  eventPlace: string;
+  event: any;
+  name: string;
+  date: Date;
+  location: string;
   constructor(private userService: UserService,
               private eventService: EventService,
               private activeRouter: ActivatedRoute,
@@ -46,18 +46,18 @@ export class EventNewComponent implements OnInit {
     }
   }
   addEvent() {
-    this.event = {name: this.eventName, date: this.eventDate, location: this.eventPlace};
-    // this.event['name'] = this.eventName;
-    // this.event['date'] = this.eventDate;
-    // this.event['location'] = this.eventPlace;
+    this.event = {name: this.name, date: this.date, location: this.location};
     this.eventService.createEvent(this.userId, this.event).subscribe(
       res => {
         this.event = res;
-      }, err => {
+        if (this.event['_id']) {
+          console.log(JSON.stringify(this.event));
+          this.router.navigate(['/user/' + this.userId + '/event']);
+        } else {
+          return;
+        }}, err => {
         alert('Error!');
-      }
-    )
-    this.router.navigate(['/user/' + this.userId + '/event']);
+      });
   }
   toEventList() {
     this.router.navigate(['/user/' + this.userId + '/event']);

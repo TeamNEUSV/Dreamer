@@ -33,12 +33,9 @@ module.exports = function(app) {
 
   function findPostEventsByUser(req, res) {
     var userId = req.params['userId'];
-    var postId = userModel.findUserById(userId).select('postevents');
-    var postevents = [];
-    for(var i = 0; i < postId.length; i++) {
-      postevents.push(eventModel.findEventById(postId[i]));
-    }
-    res.json(postevents);
+    eventModel.findPostEventsByUser(userId).then(function(postevents) {
+      res.json(postevents);
+    })
   }
 
   function findGoingEventsByUser(req, res) {
