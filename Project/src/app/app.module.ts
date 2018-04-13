@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/home/home-page/home-page.component';
@@ -16,8 +16,8 @@ import { EventAttComponent } from './components/event/event-att/event-att.compon
 import { PersonComponent } from './components/event/event-att/person/person.component';
 import { MessageComponent } from './components/event/event-att/person/message/message.component';
 import { InboxComponent } from './components/user/inbox/inbox.component';
-import {UserService} from './services/user/user.service.client';
-import {EventService} from './services/event/event.service.client';
+import {UserService} from './services/user.service.client';
+import {EventService} from './services/event.service.client';
 
 
 import { Routing } from './app.routing';
@@ -45,7 +45,7 @@ import { Routing } from './app.routing';
     BrowserModule,
     FormsModule,
     Routing,
-    HttpModule,
+    HttpClientModule,
   ],
   providers: [
     UserService,

@@ -4,8 +4,6 @@ module.exports = function(app) {
   app.post("/api/user", createUser);
   app.get("/api/user", findUsers);
   app.get("/api/user/:userId", findUserById);
-  app.get("/api/user/:userId/postevent", findPostEventsByUser);
-  app
   app.put("/api/user/:userId", updateUser);
   app.delete("/api/user/:userId", deleteUser);
 
@@ -14,7 +12,7 @@ module.exports = function(app) {
     var body = JSON.parse(Object.keys(req.body)[0]);
     console.log(JSON.stringify(body));
     var newUser = {
-      username: body.username,
+      email: body.email,
       password: body.password
     };
     console.log(JSON.stringify(newUser));
@@ -23,16 +21,16 @@ module.exports = function(app) {
     });
   }
   function findUsers(req, res) {
-    var username = req.query['username'];
+    var email = req.query['email'];
     var password = req.query['password'];
-    console.log(username);
-    if(username && password) {
-      userModel.findUserByCredentials(username, password).then(function(user) {
+    console.log(email);
+    if(email && password) {
+      userModel.findUserByCredentials(email, password).then(function(user) {
         res.json(user);
       });
       return;
-    } else if(username) {
-      userModel.findUserByUsername(username).then(function(user) {
+    } else if(email) {
+      userModel.findUserByEmail(email).then(function(user) {
         res.json(user);
       });
       return;
@@ -47,8 +45,6 @@ module.exports = function(app) {
       res.json(user);
     });
   }
-
-
 
 
   function updateUser(req, res) {

@@ -4,11 +4,8 @@ var userModel = mongoose.model("UserModel", userSchema);
 
 userModel.createUser = createUser;
 userModel.findUserById = findUserById;
-userModel.findUserByUsername = findUserByUsername;
+userModel.findUserByEmail = findUserByEmail;
 userModel.findUserByCredentials = findUserByCredentials;
-userModel.findGoingEventsByUser = findGoingEventsByUser;
-userModel.findSavedEventsByUser = findSavedEventsByUser;
-userModel.findPostEventsByUser = findPostEventsByUser;
 userModel.updateUser = updateUser;
 userModel.deleteUser = deleteUser;
 
@@ -17,34 +14,21 @@ module.exports = userModel;
 
 
 function createUser(user) {
+  console.log('mongo user' + JSON.stringify(user));
   return userModel.create(user);
 }
 
 function findUserById(userId) {
   return userModel.findById(userId, function(err, user) {
-    console.log(user);
   });
 }
 
-function findUserByUsername(username) {
-  console.log(username);
-  return userModel.findOne({username: username});
+function findUserByEmail(email) {
+  return userModel.findOne({email: email});
 }
 
-function findUserByCredentials(username, password) {
-  return userModel.findOne({username: username, password: password});
-}
-
-function findGoingEventsByUser(userId) {
-  return userModel.findById(userId).select('+goingevents');
-}
-
-function findSavedEventsByUser(userId) {
-  return userModel.findById(userId).select('+savedevents')
-}
-
-function findPostEventsByUser(userId) {
-  return userModel.findById(userId).select('+postevents');
+function findUserByCredentials(email, password) {
+  return userModel.findOne({email: email, password: password});
 }
 
 function updateUser(userId, user) {

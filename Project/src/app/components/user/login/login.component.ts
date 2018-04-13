@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
-import {UserService} from '../../../services/user/user.service.client';
+import {UserService} from '../../../services/user.service.client';
 import {User} from '../../../models/user.model.client';
 
 @Component({
@@ -9,7 +9,7 @@ import {User} from '../../../models/user.model.client';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  user: User;
   email: string;
   password: string;
   errorFlag: boolean;
@@ -21,18 +21,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const user: User = this.userService.findUserByCredentials(this.email, this.password);
-    if (user) {
-      this.errorFlag = false;
-      this.router.navigate(['/user', user._id]);
-    } else {
-      this.errorFlag = true;
-      this.errorMsg = 'Invalid email or password !';
-    }
+    this.userService.findUserByCredentials(this.email, this.password).subscribe(
+      res => {
+        this.user = res;
+        if (this.user['_id']) {
+          this.errorFlag = false;
+          this.router.navigate(['/user/' + this.user['_id']]);
+        } else {
+          this.errorFlag = true;
+          this.errorMsg = 'Invalid email or password !';
+        }
+      }, err => {
+        this.errorFlag = true;
+        this.errorMsg = 'Something is wrong !';
+      }
+    );
   }
 
   showPassword() {
-    var x = (document.getElementById('password') as HTMLInputElement);
+    const x = (document.getElementById('password') as HTMLInputElement);
     if (x.type === 'password') {
       x.type = 'text';
     } else {

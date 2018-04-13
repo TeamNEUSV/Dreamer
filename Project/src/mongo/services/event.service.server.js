@@ -1,30 +1,24 @@
+var userModel = require('../models/user/user.model.server');
 var eventModel = require('../models/event/event.model.server');
 
 module.exports = function(app) {
   app.post("/api/user/:userId/event", createEvent);
-  app.get("/api/user/:userId/event", findAllEventsForUser);
+  app.get("/api/user/:userId/postevent", findPostEventsByUser);
+  app.get("/api/user/:userId/goingevent", findGoingEventsByUser);
+  app.get("/api/user/:userId/savedevent", findSavedEventsByUser);
   app.get("/api/event/:eventId", findEventById);
   app.put("/api/event/:eventId", updateEvent);
-  app.delete("/api/wevent/:eventId", deleteEvent);
+  app.delete("/api/event/:eventId", deleteEvent);
 
 
   function createEvent(req, res) {
     var userId = req.params['userId'];
     var newEvent = JSON.parse(Object.keys(req.body)[0]);
-    console.log("website: " + JSON.stringify(newEvent));
     eventModel.createEventForUser(userId,newEvent)
       .then(function(event) {
         res.json(event);
       });
   }
-
-  function findAllEventsForUser(req, res) {
-    var userId = req.params['userId'];
-    eventModel.findAllEventsForUser(userId).then(function(events) {
-      res.json(events);
-    });
-  }
-
 
   function findEventById(req, res) {
     var eventId = req.params['eventId'];
@@ -35,6 +29,36 @@ module.exports = function(app) {
         res.json({});
       }
     });
+  }
+
+  function findPostEventsByUser(req, res) {
+    var userId = req.params['userId'];
+    var postId = userModel.findUserById(userId).select('postevents');
+    var postevents = [];
+    for(var i = 0; i < postId.length; i++) {
+      postevents.push(eventModel.findEventById(postId[i]));
+    }
+    res.json(postevents);
+  }
+
+  function findGoingEventsByUser(req, res) {
+    var userId = req.params['userId'];
+    var postId = userModel.findUserById(userId).select('goingevents');
+    var goingevents = [];
+    for(var i = 0; i < postId.length; i++) {
+      goingevents.push(eventModel.findEventById(postId[i]));
+    }
+    res.json(goingevents);
+  }
+
+  function findSavedEventsByUser(req, res) {
+    var userId = req.params['userId'];
+    var postId = userModel.findUserById(userId).select('savedevents');
+    var savedevents = [];
+    for(var i = 0; i < postId.length; i++) {
+      savedevents.push(eventModel.findEventById(postId[i]));
+    }
+    res.json(savedevents);
   }
 
   function updateEvent(req, res) {

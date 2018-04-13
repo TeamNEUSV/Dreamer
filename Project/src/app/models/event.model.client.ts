@@ -1,16 +1,12 @@
 export class Event {
-  _id: string;
   name: string;
   date: Date;
-  place: string;
-  attendees: string[];
-  url: string;
-  constructor(_id, name, date, place, attendees, url) {
-    this._id = _id;
+  location: string;
+  description: string;
+  constructor(name, date, location, description) {
     this.name = name;
     this.date = date;
-    this.place = place;
-    this.attendees = attendees;
-    this.url = url;
+    this.location = location;
+    this.description = description;
   }
 }
