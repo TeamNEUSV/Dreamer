@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  imageUrl: String = '../../../assets/images/uploadImage.png';
   user: User;
   userId: string;
   username: string;
