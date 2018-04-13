@@ -21,49 +21,26 @@
     <div class = "container">
       <form method="post" action="">
         <label for="name" class="html-text-box">Name </label>
-        <textarea [(ngModel)]="eventName"
-                  name="eventName"
+        <textarea [(ngModel)]="name"
+                  name="name"
                   placeholder="summary of the event"
                   cols="25" rows="1" class="html-text-box"></textarea>
         <div class="col-sm-6">
           <label for="date" class="html-text-box ">Date</label>
           <br>
-          <input [(ngModel)]="eventDate"
+          <input [(ngModel)]="date"
                     name="eventDate"
                     type="date"
                     class="html-date"/>
         </div>
 
         <div class="col-sm-6">
-          <label for="place" class="html-text-box">Place</label>
+          <label for="location" class="html-text-box">Location</label>
           <br>
-          <div class="dropdown">
-            <button (click)="dropdown()"
-                    id = "myDropdown"
-                    class = "dropdown-content"
-                    class="btn btn-default dropdown-toggle largeBtn"
-                    type="button"
-                    data-toggle="dropdown">
-              Select Location<span class="caret"></span>
-            </button>
-
-            <ul class="dropdown-menu">
-              <input type="text"
-                     placeholder="Search.."
-                     id="myInput"
-                     onkeyup="filterFunction()"/>
-              <li><a href="#">San Jose</a></li>
-              <li><a href="#MountainView">Mountain View</a></li>
-              <li><a href="#SantaClara">Santa Clara</a></li>
-              <li><a href="#Sunnyvale">Sunnyvale</a></li>
-              <li><a href="#Fremont">Fremont</a></li>
-              <li><a href="#SanFrancisco">San Francisco</a></li>
-              <li><a href="#Others">Others</a></li>
-
-            </ul>
-
-          </div>
-
+        <input [(ngModel)]="location"
+               name="location"
+               placeholder="the specific location of the event"
+               class="html-location"/>
         </div>
 
         <label for="description" class="html-text-box" style="float:left">Description</label>

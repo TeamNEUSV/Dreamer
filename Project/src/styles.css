@@ -396,3 +396,10 @@ input.html-date{
   margin-top: 10px;
   margin-left: 8px;
 }
+
+input.html-location{
+  height: 45px;
+  width: 30em;
+  margin-top: 10px;
+}
+

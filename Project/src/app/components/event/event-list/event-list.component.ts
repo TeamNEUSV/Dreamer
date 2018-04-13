@@ -14,15 +14,6 @@ import {Router} from '@angular/router';
 export class EventListComponent implements OnInit {
   userId: string;
   event: Event;
-  // events: Event[] = [
-  //   new Event('123',
-  //     'Low Complexity Real-Time Simultaneous Localization & Mapping, Velodyne LiDAR',
-  //     'Apr 4th, 2018', 'Hacker Dojo', ['123', '234'],
-  //     'https://www.meetup.com/IEEE-Robotics-and-Automation-Society/'),
-  //   new Event('234', 'The 2nd Shenzhen Innovation & Entrepreneurship International Competition',
-  //     'Mar 30th, 2018', 'Santa Clara Convention Center', ['234', '345'],
-  //     'https://tinyurl.com/y92lyovb'),
-  // ];
   postevents: Event[];
   savedevents: Event[];
   goingevents: Event[];
@@ -35,26 +26,16 @@ export class EventListComponent implements OnInit {
   ngOnInit() {
     this.activeRouter.params.subscribe(params => {
       this.userId = params['uid'];
-      // this.user = this.userService.findUserById(this.userId);
-      // console.log('userId: ', this.user._id);
-      // this.eventService.findSavedEventsByUser(this.userId)
-      //   .subscribe(res => {
-      //     console.log(res);
-      //     this.savedevents = this.savedevents.concat(res);
-      //   });
-
       this.eventService.findGoingEventsByUser(this.userId).subscribe(res => {
-        console.log(res);
         this.goingevents = res;
       }, err => {
         alert('Error!'); });
       this.eventService.findPostEventsByUser(this.userId).subscribe(res => {
-          console.log(res);
+        console.log('postevents :' + JSON.stringify(res));
           this.postevents = res;
         }, err => {
        alert('Error!'); });
       this.eventService.findSavedEventsByUser(this.userId).subscribe(res => {
-        console.log(res);
         this.postevents = res;
       }, err => {
         alert('Error!');

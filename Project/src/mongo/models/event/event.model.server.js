@@ -11,7 +11,8 @@ eventModel.deleteEvent = deleteEvent;
 module.exports = eventModel;
 
 function createEventForUser(userId, event) {
-  event['_user'] = userId;
+  event['creator'] = userId;
+  console.log('mongo' + JSON.stringify(event));
   return eventModel.create(event);
 }
 
