@@ -37,11 +37,15 @@ export class EventService {
       date: event['date'],
       location: event['location'],
       description: event['description'],
-    }
+    };
     return this.http.put<Event>(url, JSON.stringify(body), {headers});
   }
   deleteWebsite(eventId): Observable<Event> {
     const url = 'http://localhost:3000/api/event/' + eventId;
     return this.http.delete<Event>(url);
+  }
+  findAllEvents(): Observable<Event[]> {
+    const url = 'http://localhost:3000/api/event';
+    return this.http.get<Event[]>(url);
   }
 }

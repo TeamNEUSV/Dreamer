@@ -17,6 +17,7 @@ export class EventListComponent implements OnInit {
   postevents: Event[];
   savedevents: Event[];
   goingevents: Event[];
+  events: Event[];
   user: User;
 
   constructor(private eventService: EventService,
@@ -31,12 +32,18 @@ export class EventListComponent implements OnInit {
       }, err => {
         alert('Error!'); });
       this.eventService.findPostEventsByUser(this.userId).subscribe(res => {
-        console.log('postevents :' + JSON.stringify(res));
+        // console.log('postevents :' + JSON.stringify(res));
           this.postevents = res;
         }, err => {
        alert('Error!'); });
       this.eventService.findSavedEventsByUser(this.userId).subscribe(res => {
         this.savedevents = res;
+      }, err => {
+        alert('Error!');
+      });
+      this.eventService.findAllEvents().subscribe(res => {
+        // console.log('events :' + JSON.stringify(res));
+        this.events = res;
       }, err => {
         alert('Error!');
       });

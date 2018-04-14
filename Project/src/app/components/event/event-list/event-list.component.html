@@ -36,11 +36,8 @@
         <div class="tab-pane fade in active" id="live">
 
           <ul *ngFor = "let event of events"  class = "list-group">
-
-
             <li class = "list-group-item">
               <div class = "row">
-
                 <div class="col-xs-1">
                   <a (click)="toAttendees()">
                     Attendees
@@ -48,15 +45,15 @@
                 </div>
 
                 <div class="col-xs-6" style="font-size: 15pt">
-    <span>
-      <a target="_blank" rel="noopener"
-         href={{event.url}}>
-        {{event.name}}</a>
-    </span>
+                  <span>
+                    <a target="_blank" rel="noopener"
+                       href={{event.url}}>
+                      {{event.name}}</a>
+                  </span>
                 </div>
 
                 <div class="col-xs-2">
-              <span>{{event.date}}</span>
+                  <span>{{event.date}}</span>
                 </div>
 
                 <div class="col-xs-2">
@@ -68,7 +65,6 @@
                     <span>Share</span>
                   </a>
                 </div>
-
               </div>
             </li>
 

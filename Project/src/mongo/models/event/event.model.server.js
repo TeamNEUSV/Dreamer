@@ -9,6 +9,7 @@ eventModel.findPostEventsByUser = findPostEventsByUser;
 eventModel.findEventById = findEventById;
 eventModel.updateEvent = updateEvent;
 eventModel.deleteEvent = deleteEvent;
+eventModel.findAllEvents = findAllEvents;
 
 module.exports = eventModel;
 
@@ -31,4 +32,9 @@ function updateEvent(eventId, event) {
 }
 function deleteEvent(eventId) {
   return eventModel.remove({_id: eventId});
+}
+
+function findAllEvents() {
+  return eventModel.find(function (err, docs) {
+  });
 }
