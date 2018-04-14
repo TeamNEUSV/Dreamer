@@ -36,7 +36,7 @@ export class EventListComponent implements OnInit {
         }, err => {
        alert('Error!'); });
       this.eventService.findSavedEventsByUser(this.userId).subscribe(res => {
-        this.postevents = res;
+        this.savedevents = res;
       }, err => {
         alert('Error!');
       });

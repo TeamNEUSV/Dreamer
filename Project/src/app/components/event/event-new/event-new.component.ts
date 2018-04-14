@@ -47,8 +47,10 @@ export class EventNewComponent implements OnInit {
   }
   addEvent() {
     this.event = {name: this.name, date: this.date, location: this.location};
+    console.log('input : ' + JSON.stringify(this.event));
     this.eventService.createEvent(this.userId, this.event).subscribe(
       res => {
+        console.log(' res : ' + JSON.stringify(this.event));
         this.event = res;
         if (this.event['_id']) {
           console.log(JSON.stringify(this.event));
