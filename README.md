@@ -3,14 +3,9 @@
 ## About Weaver 
 * Weaver is an event-based social network website.
 * It was developed by Xing Du, Haoli Li, Jin Niu and Qi Zhang at NEU SV campus during March and April, 2018.
-* It was come up firstly for helping campus organize different events easily, and not be a dating service.
-* It can help both individuals and teams to public and schedule events.
-* It supports features such as notification, chatting, submission，management, cancellation, and so on.
-
-## Explore More
-* Events can be created and organized by any Weaver member, or co-hosted by multiple members. 
-* Groups can be established to facilitate based on Campus , and also specially-catered events, such as Web, Machine Learning, Big Data etc.
-* Group members can receive event notification send instant messages within a group.
+* It was come up firstly for helping campus organize events, and connect people attending same events.
+* It can help both individuals and teams to publish events visible to all users on the platform.
+* User can build personalized event list, view profile of event attendees and send message or conduct group chatting.
 
 ## Contact us:
 
