@@ -1,5 +1,4 @@
 #                                     Weaver: a event-based social network
-# Weaver__Let's organize! 
 ## About Weaver 
 * Weaver is an event-based social network website.
 * It was developed by Xing Du, Haoli Li, Jin Niu and Qi Zhang at NEU SV campus during March and April, 2018.
