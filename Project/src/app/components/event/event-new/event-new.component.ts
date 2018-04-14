@@ -10,6 +10,7 @@ import {EventService} from '../../../services/event.service.client';
 })
 export class EventNewComponent implements OnInit {
   userId: string;
+  eventId: string;
   event: any;
   name: string;
   date: Date;
@@ -22,6 +23,7 @@ export class EventNewComponent implements OnInit {
   ngOnInit() {
     this.activeRouter.params.subscribe(params => {
       this.userId = params['uid'];
+      this.eventId = params['eid'];
     });
   }
   toProfile() {
@@ -31,20 +33,20 @@ export class EventNewComponent implements OnInit {
     document.getElementById('myDropdown').classList.toggle('show');
   }
 
-  filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
-    filter = input.value.toUpperCase();
-    var div = document.getElementById('myDropdown');
-    a = div.getElementsByTagName('a');
-    for (i = 0; i < a.length; i++) {
-      if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = '';
-      } else {
-        a[i].style.display = 'none';
-      }
-    }
-  }
+  // filterFunction() {
+  //   var input, filter, ul, li, a, i;
+  //   input = document.getElementById('myInput');
+  //   filter = input.value.toUpperCase();
+  //   var div = document.getElementById('myDropdown');
+  //   a = div.getElementsByTagName('a');
+  //   for (i = 0; i < a.length; i++) {
+  //     if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+  //       a[i].style.display = '';
+  //     } else {
+  //       a[i].style.display = 'none';
+  //     }
+  //   }
+  // }
   addEvent() {
     this.event = {name: this.name, date: this.date, location: this.location};
     console.log('input : ' + JSON.stringify(this.event));
@@ -64,4 +66,5 @@ export class EventNewComponent implements OnInit {
   toEventList() {
     this.router.navigate(['/user/' + this.userId + '/event']);
   }
+
 }

@@ -57,5 +57,4 @@ export class EventListComponent implements OnInit {
   toProfile() {
     this.router.navigate(['/user/' + this.userId]);
   }
-
 }

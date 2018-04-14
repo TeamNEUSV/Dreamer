@@ -23,7 +23,7 @@ const APP_ROUTES: Routes = [
   { path : 'user/:uid/inbox' , component: InboxComponent},
   { path : 'user/:uid/event' , component: EventListComponent},
   { path : 'user/:uid/event/new' , component: EventNewComponent},
-  { path : 'user/:uid/event/:eid', component: EventEditComponent},
+  { path : 'user/:uid/event/:eid/edit', component: EventEditComponent},
   { path : 'user/:uid/event/:eid/attendee' , component: EventAttComponent},
   { path : 'user/:uid/event/:eid/attendee/:aid' , component: PersonComponent},
   { path : 'user/:uid/event/:eid/attendee/:aid/:mid' , component: MessageComponent},

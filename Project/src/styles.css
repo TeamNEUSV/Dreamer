@@ -371,10 +371,6 @@ p.pLine2 {
   margin: 14px 15px;
 }
 
-.caret {
-  border-width: 5px;
-  /*border-top:4px;*/
-}
 
 .textPstn{
   margin:5px;
@@ -406,4 +402,17 @@ input.html-location{
   width: 30em;
   margin-top: 10px;
 }
+
+.noborder{
+border-color: snow;
+}
+
+.withBorder{
+  border-color: black;
+}
+
+.glyphicon{
+  font-size:24px;
+}
+
 

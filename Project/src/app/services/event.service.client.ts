@@ -14,7 +14,7 @@ export class EventService {
       date: event['date'],
       location: event['location'],
       description: event['description']
-    }
+    };
     return this.http.post<Event>(url, JSON.stringify(body), {headers});
   }
   findPostEventsByUser(userId): Observable<Event[]> {
@@ -40,7 +40,7 @@ export class EventService {
     };
     return this.http.put<Event>(url, JSON.stringify(body), {headers});
   }
-  deleteWebsite(eventId): Observable<Event> {
+  deleteEvent(eventId): Observable<Event> {
     const url = 'http://localhost:3000/api/event/' + eventId;
     return this.http.delete<Event>(url);
   }
