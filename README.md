@@ -1,33 +1,18 @@
 #                                     Weaver: a event-based social network
-## Motivation
+# Weaver__Let's organize! 
+## About Weaver 
+* Weaver is an event-based social network website.
+* It was developed by Xing Du, Haoli Li, Jin Niu and Qi Zhang at NEU SV campus during March and April, 2018.
+* It was come up firstly for helping campus organize different events easily, and not be a dating service.
+* It can help both individuals and teams to public and schedule events.
+* It supports features such as notification, chatting, submission，management, cancellation, and so on.
 
-* Event organization: The need to organize school events interested/going and participated in one place, currently the events are distributed across different social media platforms or notified via email. 
+## Explore More
+* Events can be created and organized by any Weaver member, or co-hosted by multiple members. 
+* Groups can be established to facilitate based on Campus , and also specially-catered events, such as Web, Machine Learning, Big Data etc.
+* Group members can receive event notification send instant messages within a group.
 
-* Social interaction: The need to connect with those who share your event experience. 
-
-![](https://www.ibm.com/events/shared/img/think/home/think-new-lead.jpg)
-
-## Features
-* User can browse all events, choose interested events (either save or show intension to attend) and post events
-* User can check attendees of any event, check their profile information(workplace, title, social media account) and send message.
-
-## Workflow diagram 
-
-![](https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/doc/Untitled%20Diagram.png?raw=true)
-
-## How to run
-Make sure you have angularJS installed, git clone the repo, cd to Project folder and execute ng Serve will start the frontend.
-The Project will be deployed onto Heroku as we progress on.
-
-## Technology
-We took an approach that is dynamic, data driven, and interactive. Focuses on the software development issues of integrating multiple languages, assorted data technologies, and Web interaction. Considers AngularJS, Node.js, MongoDB, HTTP, HTML, CSS, JavaScript, AJAX, SQL, and RESTful Web services.
-
-## How do we scale after launch
-* Caching: As the number of events grow up, event list (the main tab) loading speed will be optimized by caching, while personalized event list will take more time to fetch from database. 
-* Load balancing: We will build a network of multiple servers of same code and access to same data, some frontend parts will be thrown behind load balancer to ensuare that work load is distributed evenly by load balancer. 
-* Database sharding, denormalization and NoSQL: As user number grows, we need to partition data across machines. We will also add redundant information to speed up reads or use NoSQL which is designed to scale better.
-
-## Members:
+## Contact us:
 
 *Ted  li.haoli@husky.neu.edu there2win*
 *Qi Zhang zhang.q@husky.neu.edu vickyzhang*
