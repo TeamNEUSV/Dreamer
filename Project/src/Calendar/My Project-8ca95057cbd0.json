@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "still-cipher-201000",
+  "private_key_id": "8ca95057cbd07f0afa7ad4e7d5747a1af9dc04bb",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCT9wVfgEDbrPy6\nCr4GSiMRCqEwQjLjJ8UTF/PIB9yDaIVQLhmbntCi2yyzF3ai7Zfyaa6JnY2KJZjd\nGLuczW7ztpXghVhw8mHPLXrMpXFCGpXidkJDOOxiP97AEG8Ll0sEWOYlC8fd6j2w\nXDqb7KGfpEpYdrxJnEi5PZ3PgEmo/1VYe/R0sYuyBVoBcB9AgcohNUsqVMDYiNpz\nzn1kQyaIhycQ3H3IWYTeQMG2LJsrjJECUjKsidA8BhsW6BYJns+h6pIv0fBoJnby\n9KayTwC1Ad5yG9S8zDsBnp7G1Lb25GndxImu+gtvZUxf+BjYxUqRvDGCS7WLVZTP\nUy+wV+BpAgMBAAECggEAFUBfmm+UgSinlL3pvIQF5NLywzhi0CrcXIluZ06vvoTy\nzskMPwRwoU9a7G8EiFKZJgVFPvksxMhxG+JLQfJkiubwwFJOmUxKvYOh9UYWzgB9\nAg1rp3WDx/m17758gHzulpWBGpWGU4pq6UtZ1J7IOOJTFkEZenYSoN5nbc/WZInt\nuy+aBsyW6gsUxKr+l1FbcWS/360cuIaQs6j5bVF+mfleFDdJE/2R0NpcpRLSvNNI\nnQKGCeTvzPyvIwkN3ABqY/lsEKdpo5jzIN32OoP38A3iX3DWNb6PyeXZd4hDyWMJ\nIp/NV/Os5RLvBODUjkm9CySHs3edZgt52c/7wAFCbQKBgQDMC1i4CiTjgPs5voL4\nZWnNLWtZ7FNgcBebqqUH7XDK6PWfVuZihy0RL1yG26GQ9/u0qY4J6LY7xeCmKVxz\nShyYEdnwc1VAIu49wkSg2hJZy7/RaBVrPytu1rNh9x3H+nP+R0pl4dcJ+4mQQoaN\n9bXr4K4OeqHftHtmdsD0ey0VLQKBgQC5pCHdEo6Doo3FrK6hz/3rWVL9A4gpZCTs\ngh5CD3RKvBejTVN1oUjL7SsNJNHFbC7WSZKqeGxM3Dsyj5ZzECr97Z1bB0XmEqhf\nG6XsXI8u2wL0nTQbIi8UGu/S7eWpxaKJhwtfnxByoi/CBZv8SEJqrpeFTNSuZ+Xp\no1xwvt91rQKBgQC9S8mC8+ZFKePoLlZTG8KMFxcA1b6EOXmtcSKpuB5sILO+n2Ad\nCEtHJikw85FwbJ+Xe7XKe5qU2X8QqE6cpqTgb69A476zQbTElvYURDvCEsRiAa3d\nUT16FrVUrW1zmWcDACCFZH+bQ0DcFNu/17RuoILZ6+tBHq9c388jASNSAQKBgGN6\nh8b+va3eethV29LMMUZfvG/m550+k+bFJ0/BFlFCD+yrcDDVt7vHoM1PULXZbhPY\noyaEl4xsa7CBb17DaDZgkXUJJbTPhLhKiZRqWTQDmsbYQubTX6UHdkJyxyI9zQaj\nfj3EcDztmmf/N4JuemDOpFWDQWkgNf0IVG36aqaVAoGBAKfmo5C6tJh/SrUC9jaa\n7fSr8mZ1t3CMBrkZd11v93kl+fR3AU+UPSUvLYH2a///PPcF70LKLuQY11dje+bN\nO4HaEzxdDJfHLvIsn+d84hUnmNBlXAD+it14vTMYSPeXWgqUpT2agvNnYkFWQuup\nsPCgmb1qx4PzMfUg+20nVh4I\n-----END PRIVATE KEY-----\n",
+  "client_email": "weaver-admin@still-cipher-201000.iam.gserviceaccount.com",
+  "client_id": "116036009728586020834",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/weaver-admin%40still-cipher-201000.iam.gserviceaccount.com"
+}

@@ -29,6 +29,8 @@
     "@angular/platform-browser-dynamic": "^5.1.0",
     "@angular/router": "^5.1.0",
     "core-js": "^2.4.1",
+    "google-auth-library": "^1.4.0",
+    "googleapis": "^27.0.0",
     "mongoose": "^5.0.14",
     "ng": "0.0.0-rc6",
     "rxjs": "^5.5.2",
