@@ -21,7 +21,9 @@ import {EventService} from './services/event.service.client';
 
 
 import { Routing } from './app.routing';
-
+// full calendar is npm module support for calendar UI
+import * as $ from 'jquery';
+import 'fullcalendar';
 
 @NgModule({
   declarations: [

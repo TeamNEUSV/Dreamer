@@ -16,7 +16,7 @@ import { InboxComponent } from './components/user/inbox/inbox.component';
 
 const APP_ROUTES: Routes = [
   { path : '', component : HomePageComponent},
-  { path : 'event', component : HomeEventComponent},
+  { path : 'Home_event', component : HomeEventComponent},
   { path : 'login' , component: LoginComponent},
   { path : 'register' , component: RegisterComponent },
   { path : 'user/:uid' , component: ProfileComponent},
