@@ -23,14 +23,13 @@ import { EventEditComponent } from './components/user/event/event-edit/event-edi
 import { EventAttComponent } from './components/event/event-att/event-att.component';
 import { EventProfileComponent } from './components/event/event-profile/event-profile.component';
 import { EventChatComponent } from './components/event/event-chat/event-chat.component';
-
+import { EventDetailComponent} from './components/user/event/event-detail/event-detail.component';
 import {UserService} from './services/user.service.client';
 import {EventService} from './services/event.service.client';
 import {SharedService} from './services/shared.service.client';
 import {AuthenticationService} from './services/authentication.service.server';
 
 import {Routing} from './app.routing';
-
 
 @NgModule({
   declarations: [
@@ -46,6 +45,7 @@ import {Routing} from './app.routing';
     EventAttComponent,
     EventProfileComponent,
     EventChatComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,
