@@ -14,8 +14,8 @@ import {
   format
 } from 'date-fns';
 import { Observable } from 'rxjs/Observable';
-import { colors } from '../demo-utils/colors';
-
+import { colors } from '../../demo-utils/colors';
+declare var require: any;
 interface Film {
   id: number;
   title: string;

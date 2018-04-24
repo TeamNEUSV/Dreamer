@@ -3,9 +3,9 @@ import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import { map } from 'rxjs/operators/map';
 import { take } from 'rxjs/operators/take';
 import { filter } from 'rxjs/operators/filter';
-import { Plunker } from 'create-plunker';
-import { sources as demoUtilsSources } from './demo-modules/demo-utils/sources';
-
+// import { Plunker } from 'create-plunker';
+import { sources as demoUtilsSources } from './component/day-view-start-end/sources';
+declare var require: any;
 interface Source {
   filename: string;
   contents: {
@@ -22,7 +22,7 @@ interface Demo {
 }
 
 async function getSources(folder: string): Promise<Source[]> {
-  const { sources } = await import('./demo-modules/' + folder + '/sources.ts');
+  const { sources } = await import('component/' + folder + '/sources.ts');
 
   return sources.map(({ filename, contents }) => {
     const [, extension]: RegExpMatchArray = filename.match(/^.+\.(.+)$/);
@@ -36,22 +36,22 @@ async function getSources(folder: string): Promise<Source[]> {
       contents: {
         raw: contents.raw
           .replace(
-            ",\n    RouterModule.forChild([{ path: '', component: DemoComponent }])",
-            ''
-          )
-          .replace("\nimport { RouterModule } from '@angular/router';", ''),
-        highlighted: contents.highlighted // TODO - move this into a regexp replace for both
-          .replace(
-            ',\n    RouterModule.forChild([{ path: <span class="hljs-string">\'\'</span>, component: DemoComponent }])',
-            ''
-          )
-          .replace(
-            '\n<span class="hljs-keyword">import</span> { RouterModule } from <span class="hljs-string">\'@angular/router\'</span>;',
-            ''
-          )
-      },
-      language: languages[extension]
-    };
+            ',\n   RouterModule.forChild([{ path: '',component: DemoComponent }])',
+        ''
+  )
+  .replace("\nimport { RouterModule } from '@angular/router';", ''),
+      highlighted: contents.highlighted // TODO - move this into a regexp replace for both
+      .replace(
+        ',\n    RouterModule.forChild([{ path: <span class="hljs-string">\'\'</span>, component: DemoComponent }])',
+        ''
+      )
+      .replace(
+        '\n<span class="hljs-keyword">import</span> { RouterModule } from <span class="hljs-string">\'@angular/router\'</span>;',
+        ''
+      )
+  },
+    language: languages[extension]
+  };
   });
 }
 
@@ -120,7 +120,7 @@ export class DemoAppComponent implements OnInit {
         this.activeDemo = this.demos.find(
           demo => `/${demo.path}` === event.url
         );
-        this.activeDemo.sources = await getSources(this.activeDemo.path);
+        this.activeDemo.sources = await getsources(this.activeDemo.path);
       });
   }
 

@@ -1,3 +1,4 @@
+declare var require: any;
 export const sources = [
   {
     filename: 'component.ts',
