@@ -15,9 +15,3 @@ Weaver is such a dynamic and interactive event-based social network that will wo
 *Jin Niu niu.jin@husky.neu.edu jinniu*
 *Xing Du du.xing1@husky.neu.edu xdu2017*
 
-
-### Reference
-[Blog](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46) 
-[Lynda](https://www.lynda.com/Blockchain-tutorials/Blockchain-Beyond-Basics)
-[Ethereum](https://ethereum.org/token)
-[ElasticBeanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html#customize-containers-format-container_commands)
