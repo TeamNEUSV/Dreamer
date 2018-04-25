@@ -1,7 +1,7 @@
 #                                     Weaver: a event-based social network
 
 ![](https://github.com/TeamNEUSV/Weaver_LetsChat/blob/master/src/assets/images/logo.png)
-* The app is also deployed on Heroku, here is the link: https://weaver-test.herokuapp.com
+* The app is also deployed on Heroku, here is the link: https://weaver-neu.herokuapp.com
 
 ## Why Weaver?
 
