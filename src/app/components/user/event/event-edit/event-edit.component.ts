@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import {ActivatedRoute} from '@angular/router';
 import {UserService} from '../../../../services/user.service.client';
 import {EventService} from '../../../../services/event.service.client';
 import {Event} from '../../../../models/event.model.client';
 import {Router} from '@angular/router';
+=======
+import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from '../../../../services/user.service.client';
+import {EventService} from '../../../../services/event.service.client';
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
 
 @Component({
   selector: 'app-event-edit',
@@ -22,6 +28,20 @@ export class EventEditComponent implements OnInit {
   event: Event;
   postevent: any;
 
+<<<<<<< HEAD
+=======
+  userId: string;
+  eventId: string;
+  name: string;
+  date: Date;
+  location: string;
+  description: string;
+  going: boolean;
+  saved: boolean;
+  event: Event;
+  postevent: any;
+
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
   constructor(private userService: UserService,
               private eventService: EventService,
               private activeRouter: ActivatedRoute,
@@ -32,7 +52,11 @@ export class EventEditComponent implements OnInit {
       this.userId = params['uid'];
       this.eventId = params['eid'];
     });
+<<<<<<< HEAD
     this.eventService.findPostEventById(this.eventId).subscribe((event: any ) =>{
+=======
+    this.eventService.findPostEventById(this.eventId).subscribe((event: any ) => {
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
       this.postevent = event;
       this.name = this.postevent['name'];
       this.date = this.postevent['date'];
@@ -51,6 +75,7 @@ export class EventEditComponent implements OnInit {
   }
 
   toUpdate() {
+<<<<<<< HEAD
     this.postevent = {
       name: this.name,
       date: this.date,
@@ -59,6 +84,9 @@ export class EventEditComponent implements OnInit {
       going: this.going,
       saved: this.saved
     };
+=======
+    this.postevent = {name: this.name, date: this.date, location: this.location, description: this.description, going: this.going, saved: this.saved};
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
     console.log('event edit: see here:' + this.name + this.date + this.location + this.description);
     this.eventService.updateEvent(this.eventId, this.postevent).subscribe((event: any) => {
       this.postevent = event;
@@ -67,7 +95,12 @@ export class EventEditComponent implements OnInit {
     });
   }
   toProfile() {
+<<<<<<< HEAD
     this.router.navigate(['/profile']);
+=======
+    this.router.navigate(['/user/' + this.userId]);
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
   }
 
 }
+

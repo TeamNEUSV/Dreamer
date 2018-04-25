@@ -67,6 +67,7 @@ export class EventDetailComponent implements OnInit {
     });
 
   }
+<<<<<<< HEAD
 
   toNewEvent() {
     this.router.navigate(['/user/' + this.userId + '/event/new']);
@@ -78,4 +79,6 @@ export class EventDetailComponent implements OnInit {
   toSave(){
 
   }
+=======
+>>>>>>> 0827148b94ae7dfe1503c03c2439f367dd6b8dee
 }

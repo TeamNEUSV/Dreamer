@@ -8,6 +8,7 @@ import {ProfileComponent} from './components/user/profile/profile.component';
 import {EventListComponent} from './components/user/event/event-list/event-list.component';
 import {EventNewComponent} from './components/user/event/event-new/event-new.component';
 import {EventEditComponent} from './components/user/event/event-edit/event-edit.component';
+import {EventDetailComponent} from './components/user/event/event-detail/event-detail.component';
 import { EventProfileComponent} from './components/event/event-profile/event-profile.component';
 import {EventAttComponent } from './components/event/event-att/event-att.component';
 import {EventChatComponent } from './components/event/event-chat/event-chat.component';
