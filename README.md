@@ -11,7 +11,10 @@ Weaver is such a dynamic and interactive event-based social network that will wo
 ## Members:
 
 *Ted  li.haoli@husky.neu.edu there2win*
+
 *Qi Zhang zhang.q@husky.neu.edu vickyzhang*
+
 *Jin Niu niu.jin@husky.neu.edu jinniu*
+
 *Xing Du du.xing1@husky.neu.edu xdu2017*
 
